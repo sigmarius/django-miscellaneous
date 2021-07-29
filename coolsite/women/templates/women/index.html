@@ -7,7 +7,12 @@
         <ul>
             {% for p in posts %}
                 <li>
+                    {% if p.photo %}
+                        <p><img src="{{ p.photo.url }}" alt="{{ p.title }}"></p>
+                    {% endif %}
                     <h3>{{ p.title }}</h3>
+                    <p class="first">Category: {{ p.cat }}</p>
+                    <p class="last">Date of creation: {{ p.time_update|date:"d-m-Y H:i:s" }}</p>
                     {% autoescape off %}
                         <p>{{ p.content|linebreaks|truncatewords:10 }}</p>
                     {% endautoescape %}

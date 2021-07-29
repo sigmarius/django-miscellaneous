@@ -11,7 +11,7 @@
                     {% autoescape off %}
                         <p>{{ p.content|linebreaks|truncatewords:10 }}</p>
                     {% endautoescape %}
-                    <p><a href="#">Read the post!</a></p>
+                    <p><a href="{{ p.get_absolute_url }}">Read the post!</a></p>
                     <hr>
                 </li>
             {% endfor %}

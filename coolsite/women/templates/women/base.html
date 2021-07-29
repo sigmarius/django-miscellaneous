@@ -12,7 +12,7 @@
 {% block mainmenu %}
     <div class="header">
         <ul class="mainmenu">
-            <li class="logo"><a href="#"><div class="logo">Logo</div></a></li>
+            <li class="logo"><a href="{% url 'home' %}"><div class="logo">Logo</div></a></li>
             {% for m in menu %}
                 {% if not forloop.last %}
                     <li><a href="#">{{ m.title }}</a></li>

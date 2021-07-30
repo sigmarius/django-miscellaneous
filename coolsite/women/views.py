@@ -1,5 +1,7 @@
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.shortcuts import render, redirect, get_object_or_404
+
+from .forms import *
 from .models import *
 
 menu = [{'title': 'About our site', 'url_name': 'about'},
@@ -27,7 +29,18 @@ def about(request):
 
 
 def addpost(request):
-    return HttpResponse('Adding post')
+    if request.method == 'POST':
+        form = AddPostForm(request.POST)
+        if form.is_valid():
+            # print(form.cleaned_data)
+            try:
+                Women.objects.create(**form.cleaned_data)
+                return redirect('home')
+            except:
+                form.add_error(None, 'Where was a mistake during adding post in the Dstabase')
+    else:
+        form = AddPostForm()
+    return render(request, 'women/addpost.html', {'form': form, 'menu': menu, 'title': "Adding post"})
 
 
 def contact(request):

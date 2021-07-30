@@ -7,3 +7,9 @@ img {
     width: 300px;
     height: auto;
 }
+
+.form-error {
+    color: red;
+    background-color: #ddd;
+    padding: 10px;
+}

@@ -1,0 +1,53 @@
+[33mcommit e4260c28ac66f3b2ac40aad755e7dc1906454705[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: sigmarius <aamokeeva@yandex.ru>
+Date:   Fri Jul 30 11:09:13 2021 +0300
+
+    Uses forms that are not associated with data models
+
+[33mcommit fec654f610b76fcd7c8510c24dc0180a28a06914[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: sigmarius <aamokeeva@yandex.ru>
+Date:   Fri Jul 30 09:06:22 2021 +0300
+
+    Using slug in URL's
+
+[33mcommit 619bb38623ceb50fd8aac7e32a73dfd41948efc3[m
+Author: sigmarius <aamokeeva@yandex.ru>
+Date:   Thu Jul 29 15:30:43 2021 +0300
+
+    Add user templates for excluding DRY
+
+[33mcommit aba726617f2bb755fbb2061f80a42b6fd90142ba[m
+Author: sigmarius <aamokeeva@yandex.ru>
+Date:   Thu Jul 29 14:29:41 2021 +0300
+
+    Working with admin panel
+
+[33mcommit f7424bcb42b591bce555b86ab0e082bca353c522[m
+Author: sigmarius <aamokeeva@yandex.ru>
+Date:   Thu Jul 29 10:41:50 2021 +0300
+
+    Generates URL-links in templates
+
+[33mcommit 9d1ecc29bb66fbf0f0f49342605a993e4ccf26f0[m
+Author: sigmarius <aamokeeva@yandex.ru>
+Date:   Thu Jul 29 08:55:14 2021 +0300
+
+    Enables static
+
+[33mcommit 7994af37ebca2b0f498fe17954b649c28824b7ea[m
+Author: sigmarius <aamokeeva@yandex.ru>
+Date:   Wed Jul 28 09:54:31 2021 +0300
+
+    Start working with the templates
+
+[33mcommit 04b2c52cfc7657378bc1284ec3247631827985f3[m
+Author: sigmarius <aamokeeva@yandex.ru>
+Date:   Tue Jul 27 09:15:00 2021 +0300
+
+    Working with Database
+
+[33mcommit c665e963eb62b80ca33bcb7b70dcf5d96ffe20f4[m
+Author: sigmarius <aamokeeva@yandex.ru>
+Date:   Mon Jul 26 13:49:08 2021 +0300
+
+    Initial commit

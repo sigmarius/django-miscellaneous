@@ -4,5 +4,18 @@
     <h1>{{ title }}</h1>
     <section>
         <h2>Content of About page</h2>
+        {% for contact in page_obj %}
+            <p>{{ contact }}</p>
+        {% endfor %}
+
+        <nav>
+            <ul>
+                {% for p in page_obj.paginator.page_range %}
+                    <li>
+                        <a href="?page={{ p }}">{{ p }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
     </section>
 {% endblock %}

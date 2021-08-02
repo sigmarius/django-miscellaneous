@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
@@ -28,7 +29,13 @@ class WomenHome(DataMixin, ListView):
 
 @login_required
 def about(request):
-    return render(request, 'women/about.html', {'menu': menu, 'title': "About our site"})
+    contact_list = Women.objects.all()
+    paginator = Paginator(contact_list, 2)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'women/about.html', {'page_obj': page_obj, 'menu': menu, 'title': "About our site"})
 
 
 class AddPost(LoginRequiredMixin, DataMixin, CreateView):

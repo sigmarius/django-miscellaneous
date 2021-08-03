@@ -25,6 +25,7 @@ urlpatterns = [
     # path('', index),  # for index page
     # path('women/', index),  # страницы по отдельности
     # path('cats/', categories),
+    path('captcha/', include('captcha.urls')),
     path('', include('women.urls')),
 ]
 

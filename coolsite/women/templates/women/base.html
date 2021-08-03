@@ -16,6 +16,7 @@
             <li class="logo"><a href="{% url 'home' %}"><div class="logo">Logo</div></a></li>
             <li><a href="{% url 'add_post' %}">Add post</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
 
             {% if request.user.is_authenticated %}
                 <li class="last">{{ user.username }} | <a href="{% url 'logout' %}">LogOut</a></li>

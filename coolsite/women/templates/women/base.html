@@ -31,23 +31,28 @@
 {% endblock mainmenu %}
 
 <aside class="sidebar">
+{# all block Sidebar cached for 60 seconds #}
+{% load cache %}
+
     {% getcats filter=1 %}
     <ul>
-{% if cat_selected == 0 %}
-        <li class="selected">All categories</li>
-{% else %}
-        <li><a href="{% url 'home' %}">All categories</a></li>
-{% endif %}
-
-{% for c in cats %}
-{% if c.women__count > 0 %}
-    {% if c.pk == cat_selected %}
-        <li class="selected">All categories</li>
+ {% cache 60 sidebar %}
+    {% if cat_selected == 0 %}
+            <li class="selected">All categories</li>
     {% else %}
-        <li><a href="{{ c.get_absolute_url }}">{{ c.name }}</a></li>
+            <li><a href="{% url 'home' %}">All categories</a></li>
     {% endif %}
-{% endif %}
-{% endfor %}
+
+    {% for c in cats %}
+    {% if c.women__count > 0 %}
+        {% if c.pk == cat_selected %}
+            <li class="selected">{{ c.name }}</li>
+        {% else %}
+            <li><a href="{{ c.get_absolute_url }}">{{ c.name }}</a></li>
+        {% endif %}
+    {% endif %}
+    {% endfor %}
+{% endcache %}
     </ul>
 </aside>
 

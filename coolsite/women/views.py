@@ -88,5 +88,16 @@ class WomenCategory(DataMixin, ListView):
         return Women.objects.filter(cat__slug=self.kwargs['cat_slug'], is_published=True)
 
 
+class RegisterUser(DataMixin, CreateView):
+    form_class = RegisterUserForm  # standard Django form for registration
+    template_name = 'women/register.html'
+    success_url = reverse_lazy('login')
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title='Registration')
+        return dict(list(context.items()) + list(c_def.items()))
+
+
 def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена :(</h1>')
